@@ -1,0 +1,10 @@
+{
+  "id": "agent-swarm",
+  "name": "Agent Swarm",
+  "version": "1.6.0",
+  "minAppVersion": "1.4.0",
+  "description": "Spin up a swarm of AI agents that debate a topic (or your current note) and produce a synthesis note. Also includes a normal one-on-one chat mode with auto-saved conversation history, and a multi-language code editor -- including a standalone project-style window with a file tree, folder creation, and its own OS window so it can sit alongside the Chat panel. Swarm mode can optionally be given read access to a chosen project folder and propose file changes, which are queued for manual approval and logged to a changelog before anything is written. A one-click Coder Mode swaps to a built-in Dev Team roster (Architect/Backend/Frontend/Reviewer) with non-overlapping file ownership for coding tasks, restoring your usual roster when switched off. Also adds an Autopilot toggle (auto-apply proposed changes, with confirmation) and lets agents list a folder before reading/writing, so they can see what actually exists instead of guessing file names.",
+  "author": "You",
+  "authorUrl": "",
+  "isDesktopOnly": false
+}

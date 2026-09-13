@@ -10,7 +10,7 @@ if you want to view the source, visit the src/ directory
 
 const prod = process.argv[2] === "production";
 
-const context = await esbuild.context({
+const pluginContext = await esbuild.context({
 	banner: { js: banner },
 	entryPoints: ["src/main.ts"],
 	bundle: true,
@@ -39,9 +39,23 @@ const context = await esbuild.context({
 	minify: prod,
 });
 
+const rendererContext = await esbuild.context({
+	entryPoints: ["src/renderer/App.tsx"],
+	bundle: true,
+	format: "iife",
+	globalName: "AgentSwarmApp",
+	target: "es2018",
+	logLevel: "info",
+	sourcemap: prod ? false : "inline",
+	outfile: "src/renderer/app.bundle.js",
+	minify: prod,
+});
+
 if (prod) {
-	await context.rebuild();
+	await pluginContext.rebuild();
+	await rendererContext.rebuild();
 	process.exit(0);
 } else {
-	await context.watch();
+	await pluginContext.watch();
+	await rendererContext.watch();
 }

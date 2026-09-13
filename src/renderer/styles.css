@@ -1,0 +1,228 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", sans-serif;
+  color: #eaf1f6;
+  background: #111827;
+}
+
+.standalone-app-shell {
+  min-height: 100vh;
+  display: flex;
+  background: #111827;
+}
+
+.sidebar {
+  width: 260px;
+  padding: 24px;
+  background: #172033;
+  border-right: 1px solid #344157;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 12px;
+  color: #dceaf6;
+  background: #24324d;
+  border: 1px solid #344157;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sidebar button.active {
+  background: #8b5cf6;
+  color: white;
+}
+
+.workspace {
+  flex: 1;
+  padding: 24px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #344157;
+}
+
+.app-frame {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.workspace-tree {
+  min-width: 240px;
+  background: #172033;
+  border: 1px solid #344157;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.tree-title,
+.queue-title {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.tree-node {
+  color: #dceaf6;
+  padding: 4px 0;
+}
+
+.folder-node {
+  color: #95a7c5;
+}
+
+.file-node {
+  color: #dceaf6;
+}
+
+.tree-children {
+  padding-left: 16px;
+}
+
+.panel {
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: 12px;
+  background: #182235;
+  border: 1px solid #344157;
+  flex: 1;
+}
+
+.layout-card {
+  color: #dceaf6;
+}
+
+.layout-header {
+  border-bottom: 1px solid #344157;
+  margin-bottom: 12px;
+}
+
+.layout-kicker {
+  color: #a78bfa;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.layout-card h2 {
+  margin: 8px 0 4px 0;
+}
+
+.layout-card p {
+  color: #aebbd0;
+}
+
+.view-card {
+  background: transparent;
+  color: #dceaf6;
+}
+
+.view-card textarea,
+.code-editor-placeholder {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid #344157;
+  background: #111827;
+  color: #eaf1f6;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.chat-composer {
+  margin-top: 12px;
+}
+
+.chat-composer textarea {
+  width: 100%;
+  min-height: 80px;
+}
+
+.note-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.note-title {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background: #111827;
+  color: #eaf1f6;
+  border: 1px solid #344157;
+}
+
+.note-content {
+  width: 100%;
+  min-height: 200px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #344157;
+  background: #111827;
+  color: #eaf1f6;
+}
+
+.primary-button {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #8b5cf6;
+  color: white;
+  cursor: pointer;
+}
+
+.review-queue {
+  margin-top: 20px;
+  border-top: 1px solid #344157;
+  padding-top: 16px;
+}
+
+.review-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #344157;
+}
+
+.review-file {
+  color: #a78bfa;
+  font-weight: 700;
+}
+
+.review-actions {
+  margin-left: auto;
+}
+
+.review-actions button {
+  margin-left: 8px;
+}
+
+.review-list {
+  list-style: none;
+  padding: 0;
+}
+
+.review-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid #344157;
+}

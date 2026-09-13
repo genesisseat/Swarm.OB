@@ -1,0 +1,23 @@
+{
+  "appId": "com.swarm.ob.standalone",
+  "productName": "Agent Swarm",
+  "directories": {
+    "output": "dist"
+  },
+  "files": [
+    "main.js",
+    "src/**/*",
+    "package.json",
+    "manifest.json",
+    "styles.css"
+  ],
+  "mac": {
+    "category": "public.app-category.productivity"
+  },
+  "win": {
+    "target": "nsis"
+  },
+  "linux": {
+    "target": "AppImage"
+  }
+}

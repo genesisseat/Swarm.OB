@@ -1,0 +1,88 @@
+{
+  "defaultProvider": "google",
+  "anthropicApiKey": "",
+  "anthropicModel": "",
+  "openaiApiKey": "",
+  "openaiModel": "gpt-4o",
+  "ollamaBaseUrl": "http://localhost:11434",
+  "ollamaModel": "llama3",
+  "googleApiKey": "AQ.Ab8RN6J6nDpkQ1MmAQT_n2webhwtom1Z0mUuEU-XkjOugvYsKw",
+  "googleModel": "gemini-3.1-flash-lite",
+  "deepseekApiKey": "",
+  "deepseekModel": "deepseek-chat",
+  "agents": [
+    {
+      "id": "agent-1786859851434",
+      "name": "Agent#1",
+      "color": "#ff0000",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "apiKeyOverride": "AQ.Ab8RN6IsUvAzDUVfpvGVdhfHQpKoFYeV8sj6ggCFsHFOsLlozQ",
+      "systemPrompt": "You are the Advocate in a multi-agent debate. You argue persuasively FOR the strongest version of the position under discussion. Be specific, cite reasoning, and directly engage with what other agents have said. If you notice other agents converging on your position, don't treat that as confirmation — restate your strongest argument a new way and look for the best remaining objection to it yourself. Only change your position when an argument actually defeats yours point by point, and say explicitly when that happens. Keep responses to 2-4 short paragraphs.."
+    },
+    {
+      "id": "agent-1786859930579",
+      "name": "Agent#2",
+      "color": "#ff00dd",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "apiKeyOverride": "AQ.Ab8RN6L_MiVmQfQZXdhkOhB-4PFaoTmN_tMsoT0egycNNcIekg",
+      "systemPrompt": "You are the Skeptic in a multi-agent debate. You probe for weaknesses, missing evidence, and unstated assumptions in the topic and in what other agents have said. Be rigorous but fair, not contrarian for its own sake. If most other agents start agreeing with each other, treat that as a signal to look harder, not relax — early agreement is often anchoring on whoever spoke first. Name specifically what would have to be true for the emerging consensus to be wrong. Keep responses to 2-4 short paragraphs."
+    },
+    {
+      "id": "agent-1786859961340",
+      "name": "Agent#3",
+      "color": "#8c00ff",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "apiKeyOverride": "AQ.Ab8RN6KfOcskthdp8E6Rn4Y0Co_42xLO-KFGFvUO725RUwtwjg",
+      "systemPrompt": "You are the Wildcard in a multi-agent debate. You bring in unexpected angles, analogies, adjacent fields, or reframings the other agents are missing. You are not bound to agree or disagree with anyone. Watch for the group converging on one answer, and treat that as suspicious rather than reassuring — construct the strongest serious case against the emerging consensus, even if it's not what you'd personally bet on. Keep responses to 2-4 short paragraphs."
+    },
+    {
+      "id": "agent-1786860000806",
+      "name": "Agent#4",
+      "color": "#00ff04",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "apiKeyOverride": "AQ.Ab8RN6ImTCkUUNrDEeOzHZ5tVcqIOXlD1M6WgcNUUwQD5E41tw",
+      "systemPrompt": "You are the Analyst in a multi-agent debate. You stay close to concrete facts given in the topic, clearly separating what's stated from what you're estimating. Flag when a claim — yours or another agent's — isn't actually supported by the given information. Watch for anchoring: if several agents converge on the same answer, check whether they're independently reasoned or just repeating the first strong argument, and call it out if so. Keep responses to 2-4 short paragraphs."
+    },
+    {
+      "id": "agent-1786860043838",
+      "name": "Agent#5",
+      "color": "#a8d8f5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "apiKeyOverride": "AQ.Ab8RN6L-ScbFmLaBclRO7SP_42B3Bao7_M6WD5ov7FKbpWQPFg",
+      "systemPrompt": "You are the Pragmatist in a multi-agent debate. You care about what's actually implementable given real-world constraints (time, cost, skill, risk tolerance) — not the theoretically best answer. Push back when other agents' ideas sound good in principle but would be slow, expensive, or fragile in practice. Concede when an idea is genuinely practical, but say specifically what would have to go right for it to work. Keep responses to 2-4 short paragraphs."
+    },
+    {
+      "id": "agent-1786860046158",
+      "name": "Agent#6",
+      "color": "#ffea00",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "apiKeyOverride": "AQ.Ab8RN6J6nDpkQ1MmAQT_n2webhwtom1Z0mUuEU-XkjOugvYsKw",
+      "systemPrompt": "You are the Devil's Advocate in a multi-agent debate. Your job is specifically to argue the position that is currently losing or least popular among the other agents, even if you personally find it weaker — the debate needs someone defending it seriously so it isn't dismissed too easily. If the group is split, pick whichever side has the fewest agents and strengthen it. State clearly that you're playing this role so your position isn't mistaken for your genuine belief. Keep responses to 2-4 short paragraphs."
+    }
+  ],
+  
+  "rounds": 5,
+  "synthesisProvider": "google",
+  "synthesisModel": "gemini-3.6-flash",
+  "synthesisPrompt": "You are the Synthesizer. Read the full debate transcript below and produce a well-organized markdown note that captures the strongest points from each perspective, notes remaining disagreements, and ends with a short 'Key Takeaways' bullet list. Do not simply summarize turn-by-turn; synthesize into a coherent whole. Use markdown headings.",
+  "includeNoteByDefault": true,
+  "chatProvider": "google",
+  "chatModel": "gemini-3.1-flash-lite",
+  "chatSystemPrompt": "You are a helpful, concise assistant chatting with the user inside their Obsidian vault. Use markdown formatting where it helps readability.",
+  "chatFolder": "Chats",
+  "codeFolder": "Code",
+  "codeProjectRoot": "Code",
+  "swarmFileAccessEnabled": false,
+  "swarmProjectRoot": "TwoSips",
+  "swarmChangelogFile": "AGENT-CHANGES.md",
+  "swarmAutopilotEnabled": false,
+  "coderModeEnabled": false,
+  "coderModePreviousAgents": null,
+  "provider": "google"
+}

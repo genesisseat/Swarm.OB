@@ -2,10 +2,16 @@
   "name": "agent-swarm",
   "version": "1.0.0",
   "description": "A swarm of AI agents that debate and synthesize notes in Obsidian.",
-  "main": "main.js",
+  "main": "src/app/main.js",
   "scripts": {
     "dev": "node esbuild.config.mjs",
-    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "start": "electron .",
+    "dev:app": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && electron .\"",
+    "package:desktop": "electron-builder build --config electron-builder.config.json",
+    "package:win": "electron-builder build --config electron-builder.config.json --win",
+    "package:linux": "electron-builder build --config electron-builder.config.json --linux",
+    "test:smoke": "node scripts/smoke-test.mjs"
   },
   "keywords": [],
   "author": "",
@@ -26,10 +32,20 @@
     "@codemirror/lang-xml": "^6.1.0",
     "@codemirror/search": "^6.7.1",
     "@types/node": "^20.11.5",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.0.0",
     "builtin-modules": "^3.3.0",
+    "concurrently": "^9.0.1",
+    "electron": "^28.3.0",
+    "electron-builder": "^24.13.1",
     "esbuild": "^0.19.11",
     "obsidian": "latest",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tslib": "^2.8.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vite": "^6.0.0",
+    "wait-on": "^8.0.0"
   }
 }

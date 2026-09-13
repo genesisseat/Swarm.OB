@@ -1,83 +1,296 @@
-/* --- Shell: fills the sidebar leaf, nothing scrolls except the message area --- */
-.agent-swarm-view {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	overflow: hidden;
-	padding: 0;
+* {
+  box-sizing: border-box;
 }
 
-/* --- Header --- */
-.agent-swarm-header {
-	flex-shrink: 0;
-	padding: 10px 12px 8px 12px;
-	border-bottom: 1px solid var(--background-modifier-border);
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", "Roboto", sans-serif;
+  background: #111318;
+  color: #dce3ee;
 }
 
-.agent-swarm-header-title {
-	font-weight: 600;
-	font-size: 1.05em;
+.obsidian-screenshot-shell {
+  min-height: 100vh;
+  display: flex;
+  background: #0b0d12;
+  color: #dce3ee;
+  overflow: hidden;
 }
 
-/* --- Mode tabs (Swarm / Chat / Code) --- */
-.agent-swarm-mode-tabs {
-	display: flex;
-	gap: 2px;
-	background: var(--background-secondary);
-	border-radius: 6px;
-	padding: 2px;
-	margin: 0 8px;
+.icon-rail {
+  width: 54px;
+  background: #141722;
+  border-right: 1px solid #2a3040;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 12px;
 }
 
-.agent-swarm-mode-tab {
-	box-shadow: none;
-	background: transparent;
-	border-radius: 4px;
-	padding: 3px 10px;
-	font-size: 0.82em;
-	color: var(--text-muted);
+.icon-brand {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #aeb2c6;
+  font-size: 20px;
 }
 
-.agent-swarm-mode-tab:hover {
-	background: var(--background-modifier-hover);
-	color: var(--text-normal);
+.icon-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 30px;
 }
 
-.agent-swarm-mode-tab-active,
-.agent-swarm-mode-tab-active:hover {
-	background: var(--background-primary);
-	color: var(--text-normal);
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+.icon-button {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: none;
+  color: #b6bfd8;
+  background: transparent;
+  cursor: pointer;
 }
 
-.agent-swarm-header-actions {
-	display: flex;
-	align-items: center;
-	gap: 2px;
-	flex-shrink: 0;
+.icon-button.active,
+.icon-button:hover {
+  background: #252e46;
+  color: #ffffff;
 }
 
-/* Each mode's content fills the remaining space below the fixed header. */
-.agent-swarm-mode-panel {
-	flex: 1 1 auto;
-	min-height: 0;
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
+.folder-panel {
+  width: 260px;
+  background: #171b26;
+  border-right: 1px solid #2a3040;
+  padding: 14px 12px;
 }
 
-/* --- Live swarm diagram --- */
-.agent-swarm-network-panel {
-	flex-shrink: 0;
-	border-bottom: 1px solid var(--background-modifier-border);
-	padding: 8px 8px 4px 8px;
-	background: linear-gradient(180deg, var(--background-secondary) 0%, var(--background-primary) 100%);
+.folder-panel-title {
+  font-size: 14px;
+  color: #dce3ee;
+  font-weight: 700;
+  padding: 8px 0 16px 0;
 }
 
-.agent-swarm-network {
+.folder-list {
+  border-bottom: 1px solid #2d3445;
+  padding-bottom: 12px;
+}
+
+.folder-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  color: #a6afc2;
+  font-size: 11px;
+}
+
+.folder-label {
+  color: #c6d0ea;
+}
+
+.folder-count {
+  color: #8f98aa;
+}
+
+.workspace-tree-wrap {
+  margin-top: 8px;
+}
+
+.workspace-tree {
+  color: #dce3ee;
+  font-size: 11px;
+}
+
+.tree-title {
+  display: none;
+}
+
+.tree-node {
+  padding: 6px 0;
+}
+
+.folder-node {
+  color: #b9c3dd;
+}
+
+.file-node {
+  color: #dce3ee;
+}
+
+.tree-children {
+  padding-left: 16px;
+}
+
+.main-panel {
+  flex: 1;
+  background: #0d0f14;
+  border-right: 1px solid #2a3040;
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-strip {
+  height: 56px;
+  background: #141722;
+  border-bottom: 1px solid #2a3040;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+}
+
+.tab-button {
+  background: transparent;
+  color: #aab0c4;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 8px 14px;
+}
+
+.tab-button.active {
+  background: #1d2130;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.content-stage {
+  flex: 1;
+  padding: 32px;
+  background: #0c0f16;
+}
+
+.layout-card {
+  min-height: 100%;
+  border-radius: 8px;
+  border: 1px solid #283148;
+  background: transparent;
+  color: #dce3ee;
+}
+
+.layout-header {
+  border-bottom: 1px solid #283148;
+  padding-bottom: 12px;
+}
+
+.layout-kicker {
+  color: #bba7ff;
+  font-size: 11px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.layout-card h2 {
+  font-size: 18px;
+  margin: 0 0 8px 0;
+}
+
+.layout-card p {
+  color: #aab0c4;
+}
+
+.agent-panel {
+  width: 270px;
+  background: #171b26;
+  padding: 14px 16px;
+}
+
+.agent-panel-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #dce3ee;
+  border-bottom: 1px solid #2a3040;
+  padding-bottom: 12px;
+}
+
+.agent-mode-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 12px 0;
+}
+
+.agent-mode-tabs button {
+  background: transparent;
+  color: #b8bfdd;
+  border: 1px solid #2a3040;
+  padding: 7px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.agent-mode-tabs button.active,
+.agent-mode-tabs button:hover {
+  background: #6c4af8;
+  color: #fff;
+}
+
+.agent-grid {
+  background: #10141c;
+  border: 1px solid #2a3040;
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.agent-grid-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.agent-node {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.node-red { background: #d15c65; }
+.node-green { background: #48a86b; }
+.node-blue { background: #7abcf5; }
+.node-yellow { background: #d5b959; }
+.node-purple { background: #9b77ff; }
+.node-orange { background: #dc925b; }
+
+.agent-output {
+  background: #0d0f16;
+  border-left: 3px solid #8f78ff;
+  padding: 12px;
+  margin-top: 16px;
+  color: #dce3ee;
+}
+
+.output-title {
+  font-weight: 700;
+  color: #b9aaff;
+  font-size: 12px;
+}
+
+.output-text {
+  font-size: 11px;
+  line-height: 1.5;
+  color: #aab0c4;
+}
+
+.review-queue,
+.chat-composer,
+.note-editor {
+  color: #dce3ee;
+}
+
+.primary-button {
+  background: #5740d8;
+  color: #fff;
+}
+
 	width: 100%;
 	max-height: 280px;
 	overflow: auto;
